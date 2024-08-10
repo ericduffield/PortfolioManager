@@ -1,7 +1,7 @@
 # Portfolio Manager
 
 ## Overview
-This application is a portfolio manager which allows the user to view their portfolio in a graphical manner as well trade and send new orders.
+This application is a portfolio manager which allows the user to view their portfolio in a graphical manner as well as trade by sending new orders.
 
 ## Features
 This application contains two main pages: the Portfolio Dashboard and the Order Entry page.
