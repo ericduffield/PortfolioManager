@@ -1,0 +1,88 @@
+/* 2 boxes first one takes 2 thirds of space */
+#order-entry {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 2rem;
+}
+
+#market-data {
+	display: grid;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+#market-data p, #market-data b {
+	color: var(--dark);
+}
+
+#market-data span {
+	color: var(--light-grey);
+}
+
+#product {
+	font-size: 1.3rem; 
+}	
+
+#price span{
+	font-size: 1.3rem;
+	color: var(--dark);
+}
+
+#option{
+	background-color: #76856e;
+}
+
+#select{
+	background-color: #76856e;
+}
+
+#submit-order{
+	background-color: var(--primary);
+  	border: none;
+	color: white;
+	padding: 10px;
+	text-decoration: none;
+	cursor: pointer;
+	font-family: Poppins, sans-serif;
+	font-size: 14pt;
+	border-radius: 6px;
+	opacity: 0.5;
+}
+
+#submit-order:hover {
+	background-color: #017369;
+	transition: all 300ms ease;
+}
+
+/*#region **************** TABLE ****************/
+
+main table thead {
+	font-size: 1rem;
+}
+
+main table tbody td {
+	font-size: 0.9rem;
+	font-weight: 500;
+	height: 4rem;
+	color: var(--light-grey);
+}
+
+main table tbody img {
+	width: 1.9rem;
+	height: 1.9rem;
+}
+
+main table tbody td:last-child{
+    color: var(--primary);
+    width: 10%;
+}
+
+main table tbody .display_id:hover {
+	text-decoration: underline;
+}
+
+#orders {
+	display: none;
+}
+
+/*#endregion*/

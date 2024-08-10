@@ -1,0 +1,249 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Swagger for Portfolio Tracker",
+    "description": "The API endpoints for Portfolio Tracker ",
+    "version": "1.0.11"
+  },
+  "paths": {
+    "/orders": {
+      "post": {
+        "summary": "Create a new order",
+        "description": "The order can be a buy or sell order",
+        "operationId": "createOrder",
+        "requestBody": {
+          "description": "Created a new order entry",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/OrdersPost"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Created"
+          },
+          "400": {
+            "description": "Error: BAD REQUEST"
+          }
+        }
+      },
+      "get": {
+        "summary": "Get all of the orders made by the user",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Orders"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/performance": {
+      "get": {
+        "summary": "Get the total value of investement",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Performance"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/positions": {
+      "get": {
+        "summary": "Logs out current logged in user session",
+        "description": "",
+        "operationId": "logoutUser",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Positions"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cash": {
+      "get": {
+        "summary": "Get the amount of cash the user have",
+        "description": "",
+        "parameters": [],
+        "responses": {
+          "default": {
+            "description": "successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Cash"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "OrdersPost": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string",
+            "example": "US1Y"
+          },
+          "side": {
+            "type": "string",
+            "example": "Buy"
+          },
+          "type": {
+            "type": "string",
+            "example": "Market"
+          },
+          "asset_class": {
+            "type": "string",
+            "example": "Bond"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int64",
+            "example": 50
+          },
+          "price": {
+            "type": "integer",
+            "example": 100
+          }
+        },
+        "xml": {
+          "name": "orders"
+        }
+      },
+      "Orders": {
+        "type": "object",
+        "properties": {
+          "order_id": {
+            "type": "integer",
+            "format": "int64",
+            "example": 1
+          },
+          "ticker": {
+            "type": "string",
+            "example": "US1Y"
+          },
+          "side": {
+            "type": "string",
+            "example": "Buy"
+          },
+          "order_type": {
+            "type": "string",
+            "example": "Market"
+          },
+          "asset_class": {
+            "type": "string",
+            "example": "Bond"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int64",
+            "example": 50
+          },
+          "average_price": {
+            "type": "integer",
+            "example": 100
+          },
+          "display_id": {
+            "type": "string",
+            "example": "1sS7hjhFzLgFKIkd7LIS"
+          },
+          "status": {
+            "type": "string",
+            "example": "Filled"
+          }
+        },
+        "xml": {
+          "name": "orders"
+        }
+      },
+      "Performance": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "example": "2024-07-11T13:23:44.000Z"
+          },
+          "total_value": {
+            "type": "integer",
+            "example": 433675.45
+          }
+        },
+        "xml": {
+          "name": "performance"
+        }
+      },
+      "Positions": {
+        "type": "object",
+        "properties": {
+          "ticker": {
+            "type": "string",
+            "example": "US1Y"
+          },
+          "asset_class": {
+            "type": "string",
+            "example": "Bond"
+          },
+          "quantity": {
+            "type": "integer",
+            "format": "int64",
+            "example": 4490
+          },
+          "average_price": {
+            "type": "integer",
+            "example": 4.9342
+          }
+        },
+        "xml": {
+          "name": "positions"
+        }
+      },
+      "Cash": {
+        "type": "object",
+        "properties": {
+          "cash": {
+            "type": "integer",
+            "example": 121279.11
+          }
+        },
+        "xml": {
+          "name": "cash"
+        }
+      }
+    }
+  }
+}

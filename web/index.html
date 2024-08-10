@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="./styles/baseline.css">
+        <link rel="stylesheet" href="./styles/index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+        <link rel="icon" href="./images/logo/favicon.ico">
+        <link rel="apple-touch-icon" href="./images/logo/apple-touch-icon.png">
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+
+    <body>
+        <div class="container">
+            <!---------------LEFT--------------->
+            <aside>
+                <div class="top">
+                    <div class="logo">
+                        <img src="./images/logo.png" alt="logo">
+                        <h2>PORT<span class="logoHalf">FOLIO</span></h2>
+                    </div>
+                    <div class="close" id="close-btn">
+                        <span class="material-icons-sharp">close</span>
+                    </div>
+                </div>
+                <div class="sidebar">
+                    <a href="#" class="active">
+                        <span class="material-icons-sharp">space_dashboard</span>
+                        <h3>Portfolio</h3>
+                    </a>
+                    <a href="./orders.html">
+                        <span class="material-icons-sharp">description</span>
+                        <h3>Order Entry</h3>
+                    </a>
+                    <a id="dark-mode">
+                        <span id="mode-logo" class="material-icons-sharp">light_mode</span>
+                        <h3 id="mode-text">Light Mode</h3>
+                    </a>
+                </div>
+            </aside>
+            <!---------------Main--------------->
+            <main>
+                <h1 id="top-h1">Dashboard</h1>
+                <div class="box" id="top-box">
+                    <span class="loading">LOADING...</span>
+                    <div id="info">
+                        <div>
+                            <h3>Portfolio Value: </h3>
+                            <p id="portfolio-value"></p>
+                        </div>
+                        <div>
+                            <h3>Investments Value: </h3>
+                            <p id="investments-value"></p>
+                        </div>
+                        <div>
+                            <h3>Settled Cash: </h3>
+                            <p id="cash"></p>
+                        </div>
+                        <div>
+                            <h3>Day Change: </h3>
+                            <p id="day-change"></p>
+                        </div>
+                        <div>
+                            <h3>Total Change: </h3>
+                            <p id="total-change"></p>
+                        </div>
+                    </div>
+                    <div class="charts">
+                        <h3>Asset Class Allocation</h3>
+                        <div id="asset-chart"></div>
+                    </div>
+                    <div class="charts">
+                        <h3>Total Portfolio Allocation</h3>
+                        <div id="all-chart"></div>
+                    </div>
+                </div>
+                <div>
+                    <h1>Historical Performance</h1>
+                    <div class="box" id="performance-chart">
+                        <span class="loading">LOADING...</span>
+                    </div>
+                </div>
+
+                <!----------Holdings---------->
+                <div>
+                    <h1>Holdings</h1>
+                    <div class="box" id="holdings-loading">
+                        <span class="loading">LOADING...</span>
+                    </div>
+                    <table class="box" id="holdings">
+                        <thead>
+                            <tr>
+                                <th id="ticker">Ticker</th>
+                                <th>Asset Class</th>
+                                <th>Quantity</th>
+                                <th>Average Price</th>
+                                <th>Total Price</th>
+                                <th>Current Price</th>
+                                <th>Day Change</th>
+                                <th>Total Return</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div>
+                    <h1>Allocations</h1>
+                    <div class="box">
+                        <span class="loading">LOADING...</span>
+                        <div id="charts">
+                            <div>
+                                <h3>Stock Allocation</h3>
+                                <div id="stock-chart" class="allocation-chart"></div>
+                            </div>
+                            <div>
+                                <h3>Crypto Allocation</h3>
+                                <div id="crypto-chart" class="allocation-chart"></div>
+                            </div>
+                            <div>
+                                <h3>ETF Allocation</h3>
+                                <div id="etf-chart" class="allocation-chart"></div>
+                            </div>
+                            <div>
+                                <h3>Bond Allocation</h3>
+                                <div id="bond-chart" class="allocation-chart"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <!---------------RIGHT--------------->
+            <div class="right">
+                <div class="top">
+                    <button id="menu-btn">
+                        <span class="material-icons-sharp">menu</span>
+                    </button>
+
+                    <div class="profile">
+                        <div class="info">
+                            <p>John Doe</p>
+                        </div>
+                        <div>
+                            <span class="material-icons-sharp">account_circle</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-dark">
+            <footer>
+                <div class="footerContainer">
+                    <p class="copyright">PortFolio © 2024</p>
+                </div>
+            </footer>
+        </div>
+
+        <script type="module" src="./scripts/index.js"></script>
+        <script type="module" src="./scripts/baseline.js"></script>
+    </body>
+
+</html>

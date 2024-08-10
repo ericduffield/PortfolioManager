@@ -1,0 +1,6 @@
+# Ignore venv called venv
+python/venv/
+database/venv/
+
+python/__pycache__/
+database/__pycache__/

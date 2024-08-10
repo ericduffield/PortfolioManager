@@ -1,0 +1,94 @@
+
+#top-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+main #info {
+	display: grid;
+	gap: 0.8rem;
+	display: none;
+	margin-left: 1rem;
+}
+
+main #info div{
+	display: flex;
+	gap: 0.5rem;
+}
+
+main #info p{
+	color: var(--light-grey);
+	font-size: 1rem;
+}
+
+main #info h3{
+	font-size: 1rem;
+}
+
+g g g text {
+	fill: var(--dark);
+	font-family: Poppins, sans-serif;
+	font-weight: 500;
+}
+
+#ticker-select{
+	background-color: aqua;
+}
+
+main table thead {
+	font-size: 1.1rem;
+}
+
+main table tbody td {
+	font-size: 1rem;
+	font-weight: 500;
+	height: 4rem;
+	color: var(--light-grey);
+}
+
+main table tbody img {
+	width: 2.4rem;
+	height: 2.4rem;
+}
+
+#charts {
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	gap: 3rem;
+	display: none;
+}
+
+#performance-chart{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#performance-chart div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: -1rem;
+	margin-bottom: -1.3rem;
+	width: auto;
+}
+
+.charts{
+	display: none;
+}
+
+#charts h3, .charts h3 {
+	font-size: 1.3rem;
+	margin-bottom: 1.3rem;
+}
+
+#holdings{
+	display: none;
+}
+
+.allocation-chart div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
