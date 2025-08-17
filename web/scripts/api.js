@@ -2,7 +2,7 @@ import { Endpoint } from './enums.js';
 
 const API_URL = 'http://localhost:5000';
 
-import { dummy_positions, dummy_orders, dummy_cash, dummy_performance } from './dummy_data.js';
+import { dummy_positions, dummy_orders, dummy_cash, generatePerformanceData } from './dummy_data.js';
 
 const getApi = async (endpoint) => {
     return fetch(API_URL + endpoint)
@@ -39,12 +39,12 @@ const getCash = async () => {
     return dummy_cash;
 }
 
-const getPerformance = async () => {
+const getPerformance = async (portfolioValue) => {
     performance = await getApi(Endpoint.Performance);
     if (performance) return performance;
 
-    console.log("Error fetching performance, using dummy data");
-    return dummy_performance;
+    console.log("Error fetching performance, using dummy data with portfolio value offset");
+    return generatePerformanceData(portfolioValue);
 }
 
 const sendOrder = async (body) => {

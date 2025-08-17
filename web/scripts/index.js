@@ -16,7 +16,7 @@ async function updateUI() {
         [AssetClass.Bond]: 0
     }
 
-    let [[positions, _], cash, performance] = await Promise.all([positionManager.getPositions(), getCash(), getPerformance()]);
+    let [[positions, _], cash] = await Promise.all([positionManager.getPositions(), getCash()]);
 
     Object.values(positions).forEach(position => {
         const tr = document.createElement("tr");
@@ -39,6 +39,9 @@ async function updateUI() {
         dayChange += position.day_change;
     })
     let portfolioValue = investmentsValue + cash;
+
+    // Get performance data based on current portfolio value
+    performance = await getPerformance(portfolioValue);
 
     document.querySelector("#investments-value").innerHTML = dollarFormatter.format(investmentsValue);
     document.querySelector("#portfolio-value").innerHTML = dollarFormatter.format(portfolioValue);
